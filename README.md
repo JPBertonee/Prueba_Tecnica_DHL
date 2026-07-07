@@ -1,4 +1,4 @@
-# Prueba Técnica - Data Analyst 
+# Análisis de Perfil de Transporte
 
 ## Descripción del proyecto
 
@@ -33,6 +33,7 @@ transport-profile-analysis/
 │   └── transport_profile_analysis.pbix
 │
 ├── images/
+│   ├── 00_sql_server_execution.png
 │   ├── 01_overview.png
 │   ├── 02_carrier_analysis.png
 │   ├── 03_lane_analysis.png
@@ -42,6 +43,27 @@ transport-profile-analysis/
 └── data/
     └── data_notes.md
 ```
+
+---
+
+## Dataset
+
+El dataset contiene información relacionada con envíos de transporte, incluyendo:
+
+- Shipment ID
+- Carrier
+- Código postal de origen
+- Código postal de destino
+- Ciudad de origen
+- Ciudad de destino
+- Fecha de recogida
+- Fecha de entrega
+- Peso
+- Volumen
+- Peso facturable
+- Coste
+
+El archivo original fue entregado como parte de la prueba técnica y no se incluye en este repositorio.
 
 ---
 
@@ -71,8 +93,53 @@ El dataset fue cargado en SQL Server en una tabla llamada:
 dbo.Details
 ```
 
-Como algunos campos numéricos y de fecha fueron importados inicialmente como texto, se realizaron conversiones básicas dentro de las consultas para poder calcular pesos, volúmenes, fechas y rangos.
+Algunos campos fueron importados como texto debido al formato original del archivo. Por este motivo, en las consultas se realizaron conversiones básicas para poder calcular fechas, pesos, volúmenes y rangos.
 
+---
+
+## Resultados SQL
+
+### 1. Shipments por trimestre, carrier y peso total
+
+Esta consulta agrupa los shipments por carrier, año y trimestre. Luego ordena el resultado según el peso total transportado.
+
+![Consigna 1](images/01)
+
+---
+
+### 2. Promedio de días entre recogida y entrega
+
+Esta consulta calcula el promedio de días entre la fecha de recogida y la fecha de entrega.
+
+![Consigna 2](images/02)
+
+---
+
+### 3. Lanes con mayor volumen
+
+Esta consulta identifica los lanes principales, definidos como combinación entre código postal de origen y código postal de destino.
+
+![Consigna 3](images/03)
+
+Durante el análisis se observaron algunos valores de volumen inusualmente altos (los tres primeros registros), por lo que sería recomendable validarlos con la fuente original antes de tomar decisiones finales. Ademas, se identificaron valores negativos muy grandes que pueden identificarse como outliers. 
+
+---
+
+### 4. Tendencia semanal de shipments
+
+Esta consulta agrupa la cantidad de shipments por año y semana para observar la frecuencia de envíos a lo largo del tiempo.
+
+![Consigna 4](images/04)
+
+La evolución completa se presenta visualmente en la página Weekly Trends del reporte de Power BI.
+
+---
+
+### 5. Distribución por peso facturable
+
+Esta consulta clasifica los shipments según los rangos de peso facturable definidos en la consigna.
+
+![Consigna 5](images/05)
 ---
 
 ## Reporte en Power BI
@@ -139,27 +206,18 @@ El objetivo es observar tendencias, variaciones y posibles picos de actividad a 
 
 Esta página clasifica los shipments según los rangos de peso facturable definidos en la consigna.
 
-Los rangos utilizados fueron:
-
-- 0 a 50 Kg
-- 50 a 500 Kg
-- 500 a 1000 Kg
-- 1000 a 5000 Kg
-- 5000 a 10000 Kg
-- 10000 a 20000 Kg
-- Above 20000 Kg
-
 ---
 
 ## Principales resultados
 
 A partir del análisis realizado, se pueden destacar los siguientes puntos:
 
-- La actividad de transporte se concentra en determinados carriers.
+- La actividad de transporte se concentra principalmente en determinados carriers.
+- CARRIER 002 y CARRIER 001 concentran una parte importante del peso transportado.
+- El promedio de días entre recogida y entrega es de aproximadamente 5.33 días.
 - Existen lanes con volúmenes significativamente superiores al resto.
-- El promedio de días entre la fecha de recogida y la fecha de entrega permite tener una primera referencia del tiempo operativo del transporte.
 - La frecuencia semanal muestra variaciones en la actividad a lo largo del período analizado.
-- La mayor parte de los shipments se concentra en determinados rangos de peso facturable.
+- La mayor parte de los shipments se concentra en los rangos de 50-500 Kg y 1000-5000 Kg de peso facturable.
 
 ---
 
