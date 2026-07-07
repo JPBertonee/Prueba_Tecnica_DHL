@@ -45,27 +45,6 @@ transport-profile-analysis/
 
 ---
 
-## Dataset
-
-El dataset contiene información relacionada con envíos de transporte, incluyendo:
-
-- Shipment ID
-- Carrier
-- Código postal de origen
-- Código postal de destino
-- Ciudad de origen
-- Ciudad de destino
-- Fecha de recogida
-- Fecha de entrega
-- Peso
-- Volumen
-- Peso facturable
-- Coste
-
-El archivo original fue entregado como parte de la prueba técnica y no se incluye en este repositorio.
-
----
-
 ## Objetivos del análisis
 
 Se desarrollaron consultas SQL para responder las siguientes consignas:
