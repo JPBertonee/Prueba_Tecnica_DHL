@@ -45,8 +45,6 @@ El dataset fue cargado en SQL Server en una tabla llamada:
 dbo.Details
 ```
 
----
-
 ## Resultados SQL
 
 ### 1. Shipments por trimestre, carrier y peso total
@@ -57,8 +55,6 @@ Esta consulta agrupa los shipments por carrier, año y trimestre. Luego ordena e
   <img src="images/01.png" alt="Consigna 1" width="750">
 </p>
 
----
-
 ### 2. Promedio de días entre recogida y entrega
 
 Esta consulta calcula el promedio de días entre la fecha de recogida y la fecha de entrega.
@@ -66,8 +62,6 @@ Esta consulta calcula el promedio de días entre la fecha de recogida y la fecha
 <p align="center">
   <img src="images/02.png" alt="Consigna 2" width="500">
 </p>
-
----
 
 ### 3. Lanes con mayor volumen
 
