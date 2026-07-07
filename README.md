@@ -6,7 +6,8 @@ Este proyecto corresponde a una prueba técnica de análisis de datos sobre un d
 
 El objetivo fue analizar la información disponible para obtener una visión general del perfil de envíos, identificando carriers principales, tiempos de entrega, lanes con mayor volumen, tendencias semanales y distribución de shipments por peso facturable.
 
-El análisis fue realizado utilizando SQL Server para resolver y validar las consultas solicitadas, y Power BI Desktop para construir un reporte visual utilizando el dataset importado y medidas DAX.
+El análisis fue realizado utilizando SQL Server para resolver y validar las consultas solicitadas, y Power BI Desktop para construir un reporte visual utilizando el dataset importado y medidas DAX. 
+
 ---
 
 ## Herramientas utilizadas
