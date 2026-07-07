@@ -16,34 +16,7 @@ El análisis fue realizado utilizando SQL Server para las consultas y Power BI D
 - Power BI Desktop
 - Excel / CSV
 - GitHub
-
----
-
-## Estructura del repositorio
-
-```text
-transport-profile-analysis/
-│
-├── README.md
-│
-├── sql/
-│   └── analytical_test_queries.sql
-│
-├── powerbi/
-│   └── transport_profile_analysis.pbix
-│
-├── images/
-│   ├── 00_sql_server_execution.png
-│   ├── 01_overview.png
-│   ├── 02_carrier_analysis.png
-│   ├── 03_lane_analysis.png
-│   ├── 04_weekly_trends.png
-│   └── 05_weight_brackets.png
-│
-└── data/
-    └── data_notes.md
-```
-
+  
 ---
 
 ## Dataset
@@ -84,7 +57,7 @@ Se desarrollaron consultas SQL para responder las siguientes consignas:
 Las consultas utilizadas se encuentran en el archivo:
 
 ```text
-sql/analytical_test_queries.sql
+sql/queries.sql
 ```
 
 El dataset fue cargado en SQL Server en una tabla llamada:
