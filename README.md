@@ -52,7 +52,9 @@ dbo.Details
 
 Esta consulta agrupa los shipments por carrier, año y trimestre. Luego ordena el resultado según el peso total transportado.
 
-![Consigna 1](images/01.png)
+<p align="center">
+  <img src="images/01.png" alt="Consigna 1" width="750">
+</p>
 
 ---
 
@@ -60,7 +62,9 @@ Esta consulta agrupa los shipments por carrier, año y trimestre. Luego ordena e
 
 Esta consulta calcula el promedio de días entre la fecha de recogida y la fecha de entrega.
 
-![Consigna 2](images/02.png)
+<p align="center">
+  <img src="images/02.png" alt="Consigna 2" width="500">
+</p>
 
 ---
 
@@ -68,7 +72,9 @@ Esta consulta calcula el promedio de días entre la fecha de recogida y la fecha
 
 Esta consulta identifica los lanes principales, definidos como combinación entre código postal de origen y código postal de destino.
 
-![Consigna 3](images/03.png)
+<p align="center">
+  <img src="images/03.png" alt="Consigna 3" width="750">
+</p>
 
 Durante el análisis se observaron algunos valores de volumen inusualmente altos (los tres primeros registros), por lo que sería recomendable validarlos con la fuente original antes de tomar decisiones finales. Ademas, se identificaron valores negativos muy grandes que pueden identificarse como outliers. 
 
@@ -78,7 +84,9 @@ Durante el análisis se observaron algunos valores de volumen inusualmente altos
 
 Esta consulta agrupa la cantidad de shipments por año y semana para observar la frecuencia de envíos a lo largo del tiempo.
 
-![Consigna 4](images/04.png)
+<p align="center">
+  <img src="images/04.png" alt="Consigna 4" width="650">
+</p>
 
 La evolución completa se presenta visualmente en la página Weekly Trends del reporte de Power BI.
 
@@ -88,7 +96,10 @@ La evolución completa se presenta visualmente en la página Weekly Trends del r
 
 Esta consulta clasifica los shipments según los rangos de peso facturable definidos en la consigna.
 
-![Consigna 5](images/05.png)
+<p align="center">
+  <img src="images/05.png" alt="Consigna 5" width="600">
+</p>
+
 ---
 
 ## Reporte en Power BI
