@@ -1,5 +1,7 @@
 # Análisis de Perfil de Transporte
 
+---
+
 ## Descripción del proyecto
 
 Este proyecto corresponde a una prueba técnica de análisis de datos sobre un dataset de transporte.
@@ -120,8 +122,6 @@ El reporte fue organizado en diferentes páginas:
 4. Weekly Trends
 5. Chargeable Weight Profile
 
----
-
 ## Modelo y cálculos en Power BI
 
 Dentro de Power BI se crearon medidas DAX para calcular los principales indicadores del análisis, como:
@@ -141,8 +141,6 @@ También se crearon columnas calculadas para facilitar la segmentación de los d
 - Rango de peso facturable.
 
 Este enfoque permitió reproducir en Power BI los mismos criterios utilizados en las consultas SQL y presentar los resultados de una manera más clara para el análisis visual.
-
----
 
 ## Medidas DAX principales
 
