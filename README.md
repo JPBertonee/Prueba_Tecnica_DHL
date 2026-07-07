@@ -75,8 +75,6 @@ Esta consulta identifica los lanes principales, definidos como combinación entr
 
 Durante el análisis se observaron algunos valores de volumen inusualmente altos (los tres primeros registros), por lo que sería recomendable validarlos con la fuente original antes de tomar decisiones finales. Ademas, se identificaron valores negativos muy grandes que pueden identificarse como outliers. 
 
----
-
 ### 4. Tendencia semanal de shipments
 
 Esta consulta agrupa la cantidad de shipments por año y semana para observar la frecuencia de envíos a lo largo del tiempo.
@@ -86,8 +84,6 @@ Esta consulta agrupa la cantidad de shipments por año y semana para observar la
 </p>
 
 La evolución completa se presenta visualmente en la página Weekly Trends del reporte de Power BI.
-
----
 
 ### 5. Distribución por peso facturable
 
