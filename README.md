@@ -6,8 +6,7 @@ Este proyecto corresponde a una prueba técnica de análisis de datos sobre un d
 
 El objetivo fue analizar la información disponible para obtener una visión general del perfil de envíos, identificando carriers principales, tiempos de entrega, lanes con mayor volumen, tendencias semanales y distribución de shipments por peso facturable.
 
-El análisis fue realizado utilizando SQL Server para las consultas y Power BI Desktop para la visualización de resultados.
-
+El análisis fue realizado utilizando SQL Server para resolver y validar las consultas solicitadas, y Power BI Desktop para construir un reporte visual utilizando el dataset importado y medidas DAX.
 ---
 
 ## Herramientas utilizadas
@@ -100,7 +99,14 @@ El archivo de Power BI se encuentra en:
 powerbi/transport_profile_analysis.pbix
 ```
 
-El reporte fue organizado en diferentes páginas para presentar cada parte del análisis de forma clara:
+El reporte fue creado utilizando **Power BI Desktop en modo Import**, por lo que los datos quedan incluidos dentro del archivo `.pbix`.  
+Esto permite abrir y revisar el reporte sin necesidad de conectarse a mi instancia local de SQL Server ni utilizar credenciales externas.
+
+Para construir el reporte, se importó el dataset original en Power BI y se crearon medidas y columnas calculadas en **DAX** para replicar los mismos resultados obtenidos previamente mediante SQL Server.
+
+Las consultas SQL fueron utilizadas como base para validar los resultados de cada consigna, mientras que Power BI fue utilizado para presentar la información de forma visual e interactiva.
+
+El reporte fue organizado en diferentes páginas:
 
 1. Overview
 2. Carrier Analysis
@@ -110,51 +116,49 @@ El reporte fue organizado en diferentes páginas para presentar cada parte del a
 
 ---
 
-## Vista general del dashboard
+## Modelo y cálculos en Power BI
 
-### 1. Overview
+Dentro de Power BI se crearon medidas DAX para calcular los principales indicadores del análisis, como:
 
-![Overview](images/01_overview.png)
+- Total de shipments.
+- Peso total transportado.
+- Volumen total.
+- Promedio de días entre recogida y entrega.
+- Cantidad de shipments por carrier, semana, lane y rango de peso facturable.
 
-Esta página resume los principales indicadores del dataset, como cantidad total de shipments, peso total, volumen total y promedio de días entre recogida y entrega.
+También se crearon columnas calculadas para facilitar la segmentación de los datos, como:
 
----
+- Año de entrega.
+- Trimestre de entrega.
+- Semana de entrega.
+- Lane, definido como origen-destino.
+- Rango de peso facturable.
 
-### 2. Carrier Analysis
-
-![Carrier Analysis](images/02_carrier_analysis.png)
-
-Esta sección muestra el comportamiento de los shipments por carrier y trimestre.
-
-El objetivo es identificar qué carriers concentran mayor cantidad de envíos y mayor peso transportado.
-
----
-
-### 3. Lane Analysis
-
-![Lane Analysis](images/03_lane_analysis.png)
-
-Esta página permite analizar los lanes principales, definidos como combinaciones de código postal de origen y código postal de destino.
-
-El objetivo es identificar las rutas con mayor volumen transportado.
+Este enfoque permitió reproducir en Power BI los mismos criterios utilizados en las consultas SQL y presentar los resultados de una manera más clara para el análisis visual.
 
 ---
 
-### 4. Weekly Trends
+## Medidas DAX principales
 
-![Weekly Trends](images/04_weekly_trends.png)
+Algunas de las medidas utilizadas en el reporte fueron:
 
-Esta sección muestra la evolución semanal de los shipments.
+```DAX
+Total Shipments = DISTINCTCOUNT(Details[SHIPMENT_ID])
+```
 
-El objetivo es observar tendencias, variaciones y posibles picos de actividad a lo largo del período analizado.
+```DAX
+Total Weight KG = SUM(Details[WEIGHT_KG])
+```
 
----
+```DAX
+Total Volume M3 = SUM(Details[VOLUME_M3])
+```
 
-### 5. Chargeable Weight Profile
+```DAX
+Average Delivery Days = AVERAGE(Details[Delivery Days])
+```
 
-![Chargeable Weight Profile](images/05_weight_brackets.png)
-
-Esta página clasifica los shipments según los rangos de peso facturable definidos en la consigna.
+Estas medidas fueron utilizadas en las diferentes páginas del reporte para responder visualmente las consignas planteadas en la prueba técnica.
 
 ---
 
@@ -190,22 +194,6 @@ El principal desafío fue trabajar con un dataset que contenía diferentes forma
 Para evitar errores durante la carga, los datos fueron importados inicialmente como texto en SQL Server. Luego, dentro de las consultas, se realizaron conversiones básicas para calcular fechas, pesos, volúmenes y rangos.
 
 Este enfoque permitió mantener el archivo original sin modificar y realizar el análisis de forma controlada.
-
----
-
-## Información faltante para un análisis más completo
-
-Para obtener una visión más completa del perfil de transporte, sería útil contar con información adicional como:
-
-- Tipo de servicio o modo de transporte.
-- SLA o tiempo objetivo de entrega.
-- Estado del shipment.
-- Cliente o unidad de negocio.
-- Región o zona geográfica.
-- Moneda del coste.
-- Fechas planificadas vs fechas reales.
-- Motivo de retrasos, si existieran.
-- Tipo de producto transportado.
 
 ---
 
