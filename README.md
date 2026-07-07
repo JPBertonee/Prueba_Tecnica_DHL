@@ -103,7 +103,7 @@ Algunos campos fueron importados como texto debido al formato original del archi
 
 Esta consulta agrupa los shipments por carrier, año y trimestre. Luego ordena el resultado según el peso total transportado.
 
-![Consigna 1](images/01)
+![Consigna 1](images/01.png)
 
 ---
 
@@ -111,7 +111,7 @@ Esta consulta agrupa los shipments por carrier, año y trimestre. Luego ordena e
 
 Esta consulta calcula el promedio de días entre la fecha de recogida y la fecha de entrega.
 
-![Consigna 2](images/02)
+![Consigna 2](images/02.png)
 
 ---
 
@@ -119,7 +119,7 @@ Esta consulta calcula el promedio de días entre la fecha de recogida y la fecha
 
 Esta consulta identifica los lanes principales, definidos como combinación entre código postal de origen y código postal de destino.
 
-![Consigna 3](images/03)
+![Consigna 3](images/03.png)
 
 Durante el análisis se observaron algunos valores de volumen inusualmente altos (los tres primeros registros), por lo que sería recomendable validarlos con la fuente original antes de tomar decisiones finales. Ademas, se identificaron valores negativos muy grandes que pueden identificarse como outliers. 
 
@@ -129,7 +129,7 @@ Durante el análisis se observaron algunos valores de volumen inusualmente altos
 
 Esta consulta agrupa la cantidad de shipments por año y semana para observar la frecuencia de envíos a lo largo del tiempo.
 
-![Consigna 4](images/04)
+![Consigna 4](images/04.png)
 
 La evolución completa se presenta visualmente en la página Weekly Trends del reporte de Power BI.
 
@@ -139,7 +139,7 @@ La evolución completa se presenta visualmente en la página Weekly Trends del r
 
 Esta consulta clasifica los shipments según los rangos de peso facturable definidos en la consigna.
 
-![Consigna 5](images/05)
+![Consigna 5](images/05.png)
 ---
 
 ## Reporte en Power BI
