@@ -19,27 +19,6 @@ El análisis fue realizado utilizando SQL Server para las consultas y Power BI D
   
 ---
 
-## Dataset
-
-El dataset contiene información relacionada con envíos de transporte, incluyendo:
-
-- Shipment ID
-- Carrier
-- Código postal de origen
-- Código postal de destino
-- Ciudad de origen
-- Ciudad de destino
-- Fecha de recogida
-- Fecha de entrega
-- Peso
-- Volumen
-- Peso facturable
-- Coste
-
-El archivo original fue entregado como parte de la prueba técnica y no se incluye en este repositorio.
-
----
-
 ## Objetivos del análisis
 
 Se desarrollaron consultas SQL para responder las siguientes consignas:
@@ -65,8 +44,6 @@ El dataset fue cargado en SQL Server en una tabla llamada:
 ```sql
 dbo.Details
 ```
-
-Algunos campos fueron importados como texto debido al formato original del archivo. Por este motivo, en las consultas se realizaron conversiones básicas para poder calcular fechas, pesos, volúmenes y rangos.
 
 ---
 
