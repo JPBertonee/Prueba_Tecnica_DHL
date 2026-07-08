@@ -40,7 +40,7 @@ Se desarrollaron consultas SQL para responder las siguientes consignas:
 Las consultas utilizadas se encuentran en el archivo: [queries.sql](sql/queries.sql).
 
 El dataset fue cargado en SQL Server en la tabla `dbo.Details`.
-```
+
 
 ## Resultados SQL
 
