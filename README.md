@@ -165,7 +165,7 @@ La página incluye los principales resultados de las cinco consignas solicitadas
 - Tendencia semanal de shipments.
 
 <p align="center">
-  <img src="images/pbi.png" alt="Power BI Dashboard" width="900">
+  <img src="images/power.png" alt="Power BI Dashboard" width="900">
 </p>
 
 El diseño fue realizado en una única página para facilitar la revisión rápida del análisis y permitir una lectura ejecutiva de los resultados principales.
