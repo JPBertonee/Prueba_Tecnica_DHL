@@ -100,7 +100,7 @@ Esta consulta clasifica los shipments según los rangos de peso facturable defin
 El archivo de Power BI se encuentra en:
 
 ```text
-powerbi/transport_profile_analysis.pbix
+powerbi/prueba_tecnica.pbix
 ```
 
 El reporte fue desarrollado en **Power BI Desktop en modo Import**, por lo que los datos quedan incluidos dentro del archivo `.pbix`.
