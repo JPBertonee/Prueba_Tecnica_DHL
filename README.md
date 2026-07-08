@@ -35,16 +35,11 @@ Se desarrollaron consultas SQL para responder las siguientes consignas:
 
 ## Consultas SQL
 
-Las consultas utilizadas se encuentran en el archivo:
+## Consultas SQL
 
+Las consultas utilizadas se encuentran en el archivo: [queries.sql](sql/queries.sql).
 
-[Ver archivo SQL](sql/queries.sql)
-
-```
-El dataset fue cargado en SQL Server en una tabla llamada:
-
-```sql
-dbo.Details
+El dataset fue cargado en SQL Server en la tabla `dbo.Details`.
 ```
 
 ## Resultados SQL
