@@ -39,8 +39,8 @@ Las consultas utilizadas se encuentran en el archivo:
 
 
 [Ver archivo SQL](sql/queries.sql)
-```
 
+```
 El dataset fue cargado en SQL Server en una tabla llamada:
 
 ```sql
