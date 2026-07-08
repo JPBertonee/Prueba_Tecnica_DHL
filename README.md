@@ -38,7 +38,7 @@ Se desarrollaron consultas SQL para responder las siguientes consignas:
 Las consultas utilizadas se encuentran en el archivo:
 
 ```text
-sql/queries.sql
+[Ver archivo SQL](sql/queries.sql)
 ```
 
 El dataset fue cargado en SQL Server en una tabla llamada:
