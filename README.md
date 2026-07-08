@@ -35,8 +35,6 @@ Se desarrollaron consultas SQL para responder las siguientes consignas:
 
 ## Consultas SQL
 
-## Consultas SQL
-
 Las consultas utilizadas se encuentran en el archivo: [queries.sql](sql/queries.sql).
 
 El dataset fue cargado en SQL Server en la tabla `dbo.Details`.
