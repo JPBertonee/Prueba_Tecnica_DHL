@@ -76,7 +76,7 @@ Esta consulta agrupa la cantidad de shipments por año y semana para observar la
   <img src="images/04.png" alt="Consigna 4" width="650">
 </p>
 
-La evolución completa se presenta visualmente en la página Weekly Trends del reporte de Power BI.
+La evolución completa se presenta visualmente en el reporte de Power BI.
 
 ### 5. Distribución por peso facturable
 
