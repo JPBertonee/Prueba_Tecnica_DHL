@@ -103,62 +103,72 @@ El archivo de Power BI se encuentra en:
 powerbi/transport_profile_analysis.pbix
 ```
 
-El reporte fue creado utilizando **Power BI Desktop en modo Import**, por lo que los datos quedan incluidos dentro del archivo `.pbix`.  
+El reporte fue desarrollado en **Power BI Desktop en modo Import**, por lo que los datos quedan incluidos dentro del archivo `.pbix`.
+
 Esto permite abrir y revisar el reporte sin necesidad de conectarse a mi instancia local de SQL Server ni utilizar credenciales externas.
 
-Para construir el reporte, se importó el dataset original en Power BI y se crearon medidas y columnas calculadas en **DAX** para replicar los mismos resultados obtenidos previamente mediante SQL Server.
+Para construir el reporte, se importó el dataset original en Power BI y se crearon medidas y columnas calculadas para replicar los mismos criterios utilizados en las consultas SQL.
 
-Las consultas SQL fueron utilizadas como base para validar los resultados de cada consigna, mientras que Power BI fue utilizado para presentar la información de forma visual e interactiva.
+Las consultas SQL fueron utilizadas para resolver y validar las consignas, mientras que Power BI fue utilizado para presentar los resultados de forma visual en una única página resumen.
 
-El reporte fue organizado en diferentes páginas:
-
-1. Overview
-2. Carrier Analysis
-3. Lane Analysis
-4. Weekly Trends
-5. Chargeable Weight Profile
+---
 
 ## Modelo y cálculos en Power BI
 
-Dentro de Power BI se crearon medidas DAX para calcular los principales indicadores del análisis, como:
+Dentro de Power BI se crearon medidas DAX para calcular los principales indicadores del análisis:
+
+```DAX
+Total Shipments = DISTINCTCOUNT(Table1[SHIPMENT ID])
+```
+
+```DAX
+Total Weight KG = SUM(Table1[WEIGHT (KG)])
+```
+
+```DAX
+Total Volume M3 = SUM(Table1[VOLUME (M3)])
+```
+
+```DAX
+Average Delivery Days = AVERAGE(Table1[Fecha de Delivery])
+```
+
+Además, se crearon columnas auxiliares en Power Query para facilitar el análisis temporal, la segmentación por lanes y la clasificación por peso facturable, incluyendo:
+
+- Fecha de Delivery
+- Año
+- Quarter
+- Semana
+- Año Semana
+- Lane
+- Lane Detail
+- Weight Bracket
+- Weight Bracket Order
+
+Estas columnas permitieron reproducir en Power BI los mismos criterios utilizados en SQL Server y construir los visuales principales del dashboard.
+
+---
+
+## Dashboard en Power BI
+
+El reporte final fue concentrado en una única página llamada **Transport Profile Analysis**.
+
+La página incluye los principales resultados de las cinco consignas solicitadas:
 
 - Total de shipments.
+- Volumen total transportado.
 - Peso total transportado.
-- Volumen total.
 - Promedio de días entre recogida y entrega.
-- Cantidad de shipments por carrier, semana, lane y rango de peso facturable.
+- Performance trimestral por carrier.
+- Top 10 lanes por volumen.
+- Distribución de shipments por rango de peso facturable.
+- Tendencia semanal de shipments.
 
-También se crearon columnas calculadas para facilitar la segmentación de los datos, como:
+<p align="center">
+  <img src="images/pbi.png" alt="Power BI Dashboard" width="900">
+</p>
 
-- Año de entrega.
-- Trimestre de entrega.
-- Semana de entrega.
-- Lane, definido como origen-destino.
-- Rango de peso facturable.
-
-Este enfoque permitió reproducir en Power BI los mismos criterios utilizados en las consultas SQL y presentar los resultados de una manera más clara para el análisis visual.
-
-## Medidas DAX principales
-
-Algunas de las medidas utilizadas en el reporte fueron:
-
-```DAX
-Total Shipments = DISTINCTCOUNT(Details[SHIPMENT_ID])
-```
-
-```DAX
-Total Weight KG = SUM(Details[WEIGHT_KG])
-```
-
-```DAX
-Total Volume M3 = SUM(Details[VOLUME_M3])
-```
-
-```DAX
-Average Delivery Days = AVERAGE(Details[Delivery Days])
-```
-
-Estas medidas fueron utilizadas en las diferentes páginas del reporte para responder visualmente las consignas planteadas en la prueba técnica.
+El diseño fue realizado en una única página para facilitar la revisión rápida del análisis y permitir una lectura ejecutiva de los resultados principales.
 
 ---
 
