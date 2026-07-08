@@ -37,7 +37,7 @@ Se desarrollaron consultas SQL para responder las siguientes consignas:
 
 Las consultas utilizadas se encuentran en el archivo:
 
-```text
+
 [Ver archivo SQL](sql/queries.sql)
 ```
 
